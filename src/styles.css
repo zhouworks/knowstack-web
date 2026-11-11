@@ -1,0 +1,484 @@
+/* 标题仅加载所需字形；字体失败时仍由系统宋体显示可读文字。 */
+@font-face {
+  font-family: 'KnowStack Serif';
+  src: url('./assets/fonts/home-title.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  color: #303732;
+  background: #f3f2ed;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  --color-text: #303732;
+  --color-muted: #616962;
+  --color-accent: #405b4c;
+  --color-border: #cfcec4;
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  min-width: 320px;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+button,
+input {
+  font: inherit;
+}
+::selection {
+  background: #d5dfd2;
+  color: #243b2d;
+}
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 6px;
+  border-radius: 3px;
+}
+main:focus {
+  outline: none;
+}
+
+.site-shell {
+  width: min(1320px, 90%);
+  min-height: 100svh;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+}
+.site-header {
+  min-height: 100px;
+  padding: 22px 26px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+}
+.wordmark {
+  font-size: 32px;
+  font-weight: 650;
+  letter-spacing: -1px;
+  white-space: nowrap;
+}
+.wordmark span {
+  letter-spacing: -0.8px;
+}
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 42px;
+}
+.site-nav a {
+  position: relative;
+  padding-block: 12px;
+  font-size: 21px;
+  line-height: 1.4;
+  white-space: nowrap;
+  transition: color 160ms ease;
+}
+.site-nav a:hover {
+  color: var(--color-accent);
+}
+.site-nav a.is-current::after {
+  content: '';
+  position: absolute;
+  height: 2px;
+  inset: auto 0 4px;
+  background: var(--color-accent);
+}
+main {
+  flex: 1;
+}
+.home {
+  padding-top: 64px;
+}
+.home-intro {
+  /* 主视觉向上收拢时，正文和操作始终位于装饰图片上方。 */
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 70px;
+  padding-inline: 26px;
+  align-items: start;
+}
+.home-title {
+  margin: 0;
+  font-family: 'KnowStack Serif', 'Songti SC', SimSun, serif;
+  font-size: clamp(48px, 6.05vw, 90px);
+  font-weight: 500;
+  line-height: 1.22;
+  letter-spacing: -0.025em;
+}
+.home-title span {
+  display: block;
+  white-space: nowrap;
+}
+.home-summary {
+  padding-top: 9px;
+}
+.home-summary p {
+  margin: 0;
+  max-width: 495px;
+  font-size: 24px;
+  line-height: 1.85;
+  color: var(--color-muted);
+  text-wrap: pretty;
+}
+.home-actions {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  margin-top: 40px;
+}
+.button,
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 48px;
+  font-size: 22px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.button {
+  padding: 14px 40px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+}
+.button-primary {
+  background: var(--color-accent);
+  color: #fafaf5;
+  transition:
+    background 160ms ease,
+    transform 160ms ease;
+}
+.button-primary:hover {
+  background: #314d3e;
+  transform: translateY(-2px);
+}
+.button-primary:active {
+  transform: translateY(0);
+}
+.text-link {
+  transition: color 160ms ease;
+}
+.text-link svg {
+  color: var(--color-accent);
+  transition: transform 160ms ease;
+  flex: none;
+}
+.text-link:hover {
+  color: var(--color-accent);
+}
+.text-link:hover svg {
+  transform: translateX(3px);
+}
+.home-art {
+  margin: -24px -10px 38px;
+  pointer-events: none;
+  user-select: none;
+}
+.home-art img {
+  display: block;
+  width: 100%;
+  height: auto;
+  /* 柔化图片四周的背景衔接，不改变书页主体或裁切造型。 */
+  mask-image: radial-gradient(ellipse 65% 75% at center, #000 55%, transparent 100%);
+}
+.site-footer {
+  min-height: 98px;
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  border-top: 1px solid var(--color-border);
+  padding: 22px 4px;
+  font-size: 17px;
+}
+.footer-wordmark {
+  font-weight: 650;
+  white-space: nowrap;
+}
+.site-footer p {
+  margin: 0;
+  padding-left: 26px;
+  border-left: 1px solid #777d72;
+  line-height: 1.2;
+}
+.skip-link {
+  position: fixed;
+  left: 20px;
+  top: -100px;
+  z-index: 10;
+  background: var(--color-accent);
+  color: white;
+  padding: 14px 20px;
+  border-radius: 6px;
+}
+.skip-link:focus {
+  top: 12px;
+}
+
+.content-page {
+  padding: 64px 26px 100px;
+}
+.page-heading {
+  padding-bottom: 36px;
+  border-bottom: 1px solid var(--color-border);
+}
+.content-page h1 {
+  margin: 0 0 22px;
+  font-size: 46px;
+  font-weight: 550;
+  letter-spacing: -0.03em;
+}
+.page-heading p,
+.empty-state p,
+.not-found > p {
+  color: var(--color-muted);
+  line-height: 1.9;
+  font-size: 18px;
+}
+.page-heading p {
+  margin: 0;
+}
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 84px 20px 40px;
+}
+.empty-state > svg {
+  color: var(--color-accent);
+}
+.empty-state h2 {
+  font-size: 24px;
+  font-weight: 500;
+  margin: 24px 0 8px;
+}
+.empty-state p {
+  max-width: 450px;
+  margin: 0;
+}
+.empty-state .text-link {
+  margin-top: 26px;
+  font-size: 17px;
+}
+.about-copy {
+  max-width: 740px;
+  padding-top: 26px;
+  font-size: 20px;
+  line-height: 2;
+}
+.about-copy p {
+  margin: 0 0 22px;
+}
+.about-copy .text-link {
+  margin-top: 18px;
+}
+.not-found {
+  padding-block: 110px;
+}
+.not-found .eyebrow {
+  color: var(--color-accent);
+  letter-spacing: 0.15em;
+  font-size: 16px;
+}
+.not-found .button {
+  margin-top: 26px;
+}
+
+@media (min-width: 1500px) {
+  .home {
+    padding-top: 84px;
+  }
+}
+@media (max-width: 1100px) {
+  .desktop-break {
+    display: none;
+  }
+  .site-header,
+  .home-intro {
+    padding-inline: 12px;
+  }
+  .wordmark {
+    font-size: 25px;
+  }
+  .site-nav {
+    gap: 28px;
+  }
+  .site-nav a {
+    font-size: 18px;
+  }
+  .home-intro {
+    gap: 40px;
+  }
+  .home-summary p {
+    font-size: 19px;
+  }
+  .home-actions {
+    gap: 24px;
+    margin-top: 30px;
+  }
+  .button,
+  .text-link {
+    font-size: 17px;
+    gap: 9px;
+  }
+  .button {
+    padding: 12px 23px;
+  }
+}
+@media (max-width: 760px) {
+  .site-shell {
+    width: calc(100% - 40px);
+  }
+  .site-header {
+    min-height: 88px;
+    padding-inline: 0;
+    gap: 16px;
+  }
+  .wordmark {
+    font-size: 22px;
+  }
+  .site-nav {
+    gap: 20px;
+  }
+  .site-nav a {
+    font-size: 16px;
+  }
+  .home {
+    padding-top: 42px;
+  }
+  .home-intro {
+    grid-template-columns: 1fr;
+    gap: 26px;
+    padding-inline: 8px;
+  }
+  .home-title {
+    font-size: clamp(40px, 8.8vw, 64px);
+    line-height: 1.4;
+  }
+  .home-summary {
+    padding-top: 0;
+    max-width: 520px;
+  }
+  .home-summary p {
+    font-size: 18px;
+    line-height: 1.9;
+  }
+  .home-actions {
+    margin-top: 26px;
+    gap: 32px;
+  }
+  .home-art {
+    margin: 30px -8px 48px;
+  }
+  .site-footer {
+    min-height: 90px;
+    gap: 18px;
+    font-size: 14px;
+  }
+  .site-footer p {
+    padding-left: 18px;
+  }
+  .content-page {
+    padding: 42px 8px 72px;
+  }
+  .content-page h1 {
+    font-size: 36px;
+  }
+  .about-copy {
+    font-size: 18px;
+  }
+}
+@media (max-width: 520px) {
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-block: 22px 0;
+    gap: 12px;
+  }
+  .site-nav {
+    width: 100%;
+    justify-content: space-between;
+    gap: 0;
+  }
+  .site-nav a {
+    min-width: 44px;
+    text-align: center;
+  }
+  .home {
+    padding-top: 35px;
+  }
+  .home-intro {
+    padding: 0;
+    gap: 22px;
+  }
+  .home-title {
+    font-size: clamp(35px, 9.5vw, 49px);
+    letter-spacing: -0.04em;
+  }
+  .home-summary p {
+    font-size: 16px;
+    line-height: 1.9;
+  }
+  .home-actions {
+    gap: 24px;
+    margin-top: 24px;
+  }
+  .button,
+  .text-link {
+    font-size: 16px;
+  }
+  .button {
+    padding-inline: 20px;
+  }
+  .home-art {
+    margin-top: 30px;
+    margin-bottom: 38px;
+  }
+  .site-footer {
+    flex-wrap: wrap;
+    align-content: center;
+    gap: 10px;
+    padding-block: 20px;
+    font-size: 12px;
+  }
+  .site-footer p {
+    padding-left: 10px;
+  }
+  .empty-state {
+    padding: 58px 0 20px;
+  }
+  .empty-state p,
+  .page-heading p {
+    font-size: 16px;
+  }
+  .not-found h1 {
+    font-size: 28px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
+}
