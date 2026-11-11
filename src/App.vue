@@ -34,6 +34,7 @@ watch(
           :key="item.to"
           :to="item.to"
           exact-active-class="is-current"
+          :class="{ 'is-current': item.to === '/blog' && route.path.startsWith('/blog/') }"
         >
           {{ item.label }}
         </RouterLink>

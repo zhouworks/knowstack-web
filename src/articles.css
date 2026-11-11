@@ -1,0 +1,348 @@
+/* 阅读页沿用首页配色，以留白和细线组织信息。 */
+.blog-page {
+  max-width: 1080px;
+  margin-inline: auto;
+}
+.blog-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 24px;
+}
+.page-heading .section-kicker,
+.section-kicker {
+  color: var(--color-accent);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  margin: 0 0 20px;
+}
+.article-count {
+  flex-shrink: 0;
+  color: var(--color-muted);
+  font-size: 14px;
+  padding-bottom: 4px;
+}
+.article-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.article-row {
+  display: grid;
+  grid-template-columns: 132px minmax(0, 1fr);
+  gap: 36px;
+  padding: 38px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+.article-date {
+  padding-top: 4px;
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-muted);
+}
+.article-category {
+  color: var(--color-accent);
+  font-size: 13px;
+  font-weight: 600;
+  margin: 0 0 12px;
+}
+.article-info {
+  min-width: 0;
+}
+.article-info h2 {
+  font-size: 25px;
+  font-weight: 550;
+  line-height: 1.5;
+  margin: 0 0 12px;
+  overflow-wrap: anywhere;
+}
+.article-info h2 a {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 24px;
+}
+.article-info h2 a:hover {
+  color: var(--color-accent);
+}
+.article-info h2 svg {
+  align-self: center;
+  flex-shrink: 0;
+  color: var(--color-accent);
+  transition: transform 160ms ease;
+}
+.article-info h2 a:hover svg {
+  transform: translateX(4px);
+}
+.article-summary {
+  color: var(--color-muted);
+  line-height: 1.9;
+  font-size: 16px;
+  margin: 0;
+  max-width: 700px;
+  overflow-wrap: anywhere;
+}
+.article-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 18px 0 0;
+}
+.article-tags li {
+  background: #e8ebe2;
+  color: #4d6151;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+  max-width: 100%;
+}
+.article-page {
+  max-width: 824px;
+  margin-inline: auto;
+  min-width: 0;
+}
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 44px;
+  color: var(--color-muted);
+  font-size: 14px;
+}
+.back-link:hover {
+  color: var(--color-accent);
+}
+.article-header {
+  padding: 36px 0 32px;
+  border-bottom: 1px solid var(--color-border);
+}
+.article-header h1 {
+  font-size: clamp(30px, 3.3vw, 42px);
+  line-height: 1.4;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  overflow-wrap: anywhere;
+}
+.article-lead {
+  font-size: 18px;
+  line-height: 1.9;
+  color: var(--color-muted);
+  margin: 0 0 24px;
+  overflow-wrap: anywhere;
+}
+.article-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--color-muted);
+}
+.article-body {
+  padding-top: 22px;
+  font-size: 17px;
+  line-height: 1.95;
+  overflow-wrap: anywhere;
+}
+.article-body > :first-child {
+  margin-top: 16px;
+}
+.article-body p {
+  margin: 22px 0;
+}
+.article-body h1,
+.article-body h2,
+.article-body h3,
+.article-body h4,
+.article-body h5,
+.article-body h6 {
+  line-height: 1.5;
+  font-weight: 600;
+  margin: 40px 0 16px;
+  letter-spacing: -0.02em;
+  scroll-margin-top: 24px;
+}
+.article-body h1,
+.article-body h2 {
+  font-size: 27px;
+}
+.article-body h3 {
+  font-size: 22px;
+}
+.article-body h4,
+.article-body h5,
+.article-body h6 {
+  font-size: 18px;
+}
+.article-body a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-decoration-color: #99aa96;
+  text-underline-offset: 4px;
+}
+.article-body a:hover {
+  text-decoration-color: currentColor;
+}
+.article-body ul,
+.article-body ol {
+  padding-left: 1.5em;
+  margin-block: 20px;
+}
+.article-body li {
+  padding-left: 0.2em;
+  margin-block: 6px;
+}
+.article-body blockquote {
+  margin: 28px 0;
+  padding: 2px 24px;
+  border-left: 3px solid #92a58c;
+  background: #e9ece3;
+  color: #53614f;
+}
+.article-body blockquote p {
+  margin: 14px 0;
+}
+.article-body code {
+  font-family: Consolas, 'SFMono-Regular', monospace;
+  font-size: 0.86em;
+  background: #e6e9e1;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+}
+.article-body pre {
+  max-width: 100%;
+  overflow-x: auto;
+  padding: 24px;
+  margin: 28px 0;
+  border: 1px solid #d9ddd1;
+  background: #e9ece4;
+  border-radius: 10px;
+  line-height: 1.8;
+  tab-size: 2;
+}
+.article-body pre code {
+  padding: 0;
+  border: 0;
+  background: none;
+  border-radius: 0;
+  overflow-wrap: normal;
+}
+.article-body .table-scroll {
+  overflow-x: auto;
+  max-width: 100%;
+  margin: 28px 0;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+}
+.article-body table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+  line-height: 1.7;
+}
+.article-body th,
+.article-body td {
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+  padding: 12px 16px;
+  min-width: 130px;
+}
+.article-body th {
+  background: #e8ebe2;
+  font-weight: 600;
+}
+.article-body tr:last-child td {
+  border-bottom: 0;
+}
+.article-body img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 28px auto;
+}
+.article-body hr {
+  border: 0;
+  border-top: 1px solid var(--color-border);
+  margin: 40px 0;
+}
+.article-end {
+  margin-top: 54px;
+  padding-top: 24px;
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  color: var(--color-muted);
+  font-size: 14px;
+}
+.reading-state {
+  padding: 80px 0;
+  color: var(--color-muted);
+  line-height: 1.9;
+}
+.reading-state h1,
+.reading-state h2 {
+  color: var(--color-text);
+  font-size: 28px;
+  font-weight: 550;
+}
+.reading-state .button,
+.reading-state .text-link {
+  margin-top: 14px;
+  font-size: 16px;
+}
+.reading-state .button {
+  cursor: pointer;
+}
+@media (max-width: 760px) {
+  .blog-heading {
+    align-items: start;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 28px;
+  }
+  .article-row {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding-block: 28px;
+  }
+  .article-info h2 {
+    font-size: 22px;
+  }
+  .article-date {
+    font-size: 13px;
+    padding: 0;
+  }
+  .article-header {
+    padding-top: 26px;
+  }
+  .article-page .article-header h1 {
+    font-size: 30px;
+  }
+  .article-lead {
+    font-size: 16px;
+  }
+  .article-body {
+    font-size: 16px;
+  }
+  .article-body h1,
+  .article-body h2 {
+    font-size: 24px;
+  }
+  .article-body pre {
+    padding: 18px;
+  }
+  .article-body blockquote {
+    padding-inline: 18px;
+  }
+  .article-end {
+    flex-wrap: wrap;
+  }
+}

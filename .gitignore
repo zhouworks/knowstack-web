@@ -17,6 +17,10 @@ coverage
 # 项目内工具缓存（例如 npm 安装缓存）不纳入版本管理
 /.cache/
 
+# 构建前生成的已发布文章与图片，不包含内容源文件
+/src/generated/
+/public/media/generated/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

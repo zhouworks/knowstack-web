@@ -1,0 +1,6 @@
+# 自动生成内容由构建脚本维护
+src/generated/
+public/media/generated/
+dist/
+coverage/
+.cache/
