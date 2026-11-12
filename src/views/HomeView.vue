@@ -3,18 +3,21 @@ import { PhArrowRight } from '@phosphor-icons/vue'
 import { RouterLink } from 'vue-router'
 import bookSculpture from '@/assets/book-sculpture.webp'
 import bookSculptureSmall from '@/assets/book-sculpture-small.webp'
+import { siteContent } from '@/content/site'
 </script>
 
 <template>
   <section class="home" aria-labelledby="home-title">
     <div class="home-intro">
       <h1 id="home-title" class="home-title">
-        <span>把思考，</span>
-        <span>写成新的可能。</span>
+        <span v-for="(line, index) in siteContent.home.titleLines" :key="index">{{ line }}</span>
       </h1>
       <div class="home-summary">
         <p>
-          这里是知栈，记录学习与开发中的思考，<br class="desktop-break" />分享技术文章与项目实践。
+          <template v-for="(line, index) in siteContent.home.summaryLines" :key="index"
+            >{{ line
+            }}<br v-if="index < siteContent.home.summaryLines.length - 1" class="desktop-break"
+          /></template>
         </p>
         <div class="home-actions">
           <RouterLink to="/blog" class="button button-primary">

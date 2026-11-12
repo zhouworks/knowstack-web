@@ -5,7 +5,7 @@ import { PhArrowLeft } from '@phosphor-icons/vue'
 import { contentRepository } from '@/content'
 import type { PostDetail } from '@/content/models'
 import { renderMarkdown } from '@/lib/markdown'
-import { setPageMeta } from '@/lib/pageMeta'
+import { pageTitle, setPageMeta } from '@/lib/pageMeta'
 import '@/articles.css'
 
 const route = useRoute()
@@ -32,14 +32,11 @@ watch(
       const html = result ? renderMarkdown(result.bodyMarkdown, result.imageMap) : ''
       post.value = result
       bodyHtml.value = html
-      setPageMeta(
-        result ? `${result.title} · 知栈 KnowStack` : '文章不存在 · 知栈 KnowStack',
-        result?.summary,
-      )
+      setPageMeta(pageTitle(result ? result.title : '文章不存在'), result?.summary)
     } catch {
       if (!active) return
       failed.value = true
-      setPageMeta('文章加载失败 · 知栈 KnowStack')
+      setPageMeta(pageTitle('文章加载失败'))
     } finally {
       if (active) loading.value = false
     }

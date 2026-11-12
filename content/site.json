@@ -1,0 +1,40 @@
+{
+  "name": "知栈",
+  "englishName": "KnowStack",
+  "description": "知栈 KnowStack，记录学习与开发中的思考，分享技术文章与项目实践。",
+  "tagline": "持续学习，持续构建。",
+  "home": {
+    "titleLines": ["把思考，", "写成新的可能。"],
+    "summaryLines": ["这里是知栈，记录学习与开发中的思考，", "分享技术文章与项目实践。"]
+  },
+  "about": {
+    "title": "关于知栈",
+    "intro": [
+      "知栈是一个持续生长的个人技术网站。在这里，记录学习与开发中的思考，整理实践文章，也展示逐步完善的个人项目。",
+      "希望每一次阅读、思考与尝试，都能成为下一次构建的基石。"
+    ],
+    "sections": [
+      {
+        "id": "notes",
+        "title": "记录思考",
+        "text": "把学习中遇到的问题、尝试和理解整理成文章，让经验可以回看。"
+      },
+      {
+        "id": "practice",
+        "title": "动手实践",
+        "text": "在具体项目中检验想法，也留下从设计到实现的过程。"
+      },
+      {
+        "id": "growth",
+        "title": "持续积累",
+        "text": "从小处开始，随着新的理解不断补充和完善，让记录慢慢形成自己的知识体系。"
+      }
+    ],
+    "profile": {
+      "name": "zhoujianren",
+      "bio": ["天行健，君子以自强不息。"],
+      "interests": [],
+      "links": [{ "label": "zhou.jianren@qq.com", "href": "mailto:zhou.jianren@qq.com" }]
+    }
+  }
+}

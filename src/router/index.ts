@@ -2,18 +2,18 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
 import { nextTick } from 'vue'
 import { contentRepository } from '@/content'
-import { setPageMeta } from '@/lib/pageMeta'
+import { pageTitle, setPageMeta } from '@/lib/pageMeta'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
-    { path: '/', name: 'home', component: HomeView, meta: { title: '知栈 KnowStack' } },
+    { path: '/', name: 'home', component: HomeView, meta: { title: pageTitle() } },
     {
       path: '/blog',
       name: 'blog',
       component: () => import('@/views/BlogListView.vue'),
       meta: {
-        title: '文章 · 知栈 KnowStack',
+        title: pageTitle('文章'),
         description: '记录学习与开发中的思考，让每一次实践都有迹可循。',
       },
     },
@@ -21,26 +21,28 @@ const router = createRouter({
       path: '/blog/:slug',
       name: 'blog-detail',
       component: () => import('@/views/BlogDetailView.vue'),
-      meta: { title: '文章 · 知栈 KnowStack' },
+      meta: { title: pageTitle('文章') },
     },
     {
       path: '/projects',
       name: 'projects',
-      component: () => import('@/views/CollectionView.vue'),
-      props: { kind: 'projects' },
-      meta: { title: '项目 · 知栈 KnowStack' },
+      component: () => import('@/views/ProjectsView.vue'),
+      meta: {
+        title: pageTitle('项目'),
+        description: '个人项目与开发实践，把想法变成作品，在构建中探索更多可能。',
+      },
     },
     {
       path: '/about',
       name: 'about',
       component: () => import('@/views/AboutView.vue'),
-      meta: { title: '关于 · 知栈 KnowStack' },
+      meta: { title: pageTitle('关于') },
     },
     {
       path: '/:pathMatch(.*)*',
       name: 'not-found',
       component: () => import('@/views/NotFoundView.vue'),
-      meta: { title: '页面不存在 · 知栈 KnowStack' },
+      meta: { title: pageTitle('页面不存在') },
     },
   ],
   async scrollBehavior(to, _from, savedPosition) {
@@ -66,7 +68,7 @@ router.afterEach((to, from) => {
   if (to.name === 'blog-detail' && from.name === to.name && to.params.slug === from.params.slug)
     return
   setPageMeta(
-    typeof to.meta.title === 'string' ? to.meta.title : '知栈 KnowStack',
+    typeof to.meta.title === 'string' ? to.meta.title : pageTitle(),
     typeof to.meta.description === 'string' ? to.meta.description : undefined,
   )
 })

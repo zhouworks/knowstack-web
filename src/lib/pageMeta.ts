@@ -1,4 +1,10 @@
-export const defaultDescription = '知栈 KnowStack，记录学习与开发中的思考，分享技术文章与项目实践。'
+import { siteContent, siteName } from '@/content/site'
+
+export const defaultDescription = siteContent.description
+
+export function pageTitle(label?: string): string {
+  return label ? `${label} · ${siteName}` : siteName
+}
 
 export function setPageMeta(title: string, description = defaultDescription) {
   document.title = title

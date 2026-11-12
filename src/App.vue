@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { nextTick, ref, watch } from 'vue'
 import { RouterLink, RouterView, useRoute } from 'vue-router'
+import { siteContent, siteName } from '@/content/site'
 
 const route = useRoute()
 const mainContent = ref<HTMLElement | null>(null)
@@ -25,8 +26,8 @@ watch(
   <a class="skip-link" href="#main-content">跳到主要内容</a>
   <div class="site-shell">
     <header class="site-header">
-      <RouterLink to="/" class="wordmark" aria-label="知栈 KnowStack 首页">
-        知栈 <span lang="en">KnowStack</span>
+      <RouterLink to="/" class="wordmark" :aria-label="`${siteName} 首页`">
+        {{ siteContent.name }} <span lang="en">{{ siteContent.englishName }}</span>
       </RouterLink>
       <nav class="site-nav" aria-label="主导航">
         <RouterLink
@@ -46,8 +47,8 @@ watch(
     </main>
 
     <footer class="site-footer">
-      <RouterLink to="/" class="footer-wordmark">知栈 KnowStack</RouterLink>
-      <p>持续学习，持续构建。</p>
+      <RouterLink to="/" class="footer-wordmark">{{ siteName }}</RouterLink>
+      <p>{{ siteContent.tagline }}</p>
     </footer>
   </div>
 </template>

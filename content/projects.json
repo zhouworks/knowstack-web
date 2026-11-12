@@ -1,0 +1,15 @@
+[
+  {
+    "id": "knowstack",
+    "name": "知栈 KnowStack",
+    "summary": "一个记录技术思考与开发实践的个人网站。从简洁的站点介绍出发，把文章阅读和项目展示放在各自的栏目中，逐步积累内容。",
+    "status": "building",
+    "tags": ["Vue 3", "TypeScript", "Vite", "Markdown"],
+    "highlights": [
+      "简洁首页与独立内容栏目",
+      "Markdown 文章列表和详情阅读",
+      "适配桌面与手机的阅读布局"
+    ],
+    "links": []
+  }
+]

@@ -1,0 +1,282 @@
+/* 项目与关于页面共用公开内容的排版，不给缺失资料生成占位操作。 */
+.projects-page,
+.about-page {
+  max-width: 1120px;
+  margin-inline: auto;
+}
+.page-heading .content-kicker,
+.content-kicker {
+  color: var(--color-accent);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.17em;
+  line-height: 1.8;
+  margin: 0 0 20px;
+}
+.projects-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.project-card {
+  display: grid;
+  grid-template-columns: 80px minmax(0, 1fr);
+  gap: 28px;
+  padding: 44px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+.project-index {
+  color: #71816d;
+  font-size: 15px;
+  font-variant-numeric: tabular-nums;
+  padding-top: 9px;
+}
+.project-card-main {
+  min-width: 0;
+}
+.project-card-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 24px;
+  justify-content: space-between;
+}
+.project-card-heading h2 {
+  margin: 0;
+  font-size: 29px;
+  font-weight: 550;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+.project-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #56614f;
+  background: #e7eadf;
+  border-radius: 20px;
+  padding: 6px 12px;
+  white-space: nowrap;
+}
+.project-status > span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #728363;
+}
+.project-status-live {
+  background: #e0eadf;
+  color: #33583c;
+}
+.project-status-archived {
+  background: #e8e7e1;
+  color: #62665e;
+}
+.project-description {
+  max-width: 760px;
+  font-size: 17px;
+  line-height: 1.95;
+  color: var(--color-muted);
+  margin: 20px 0;
+  overflow-wrap: anywhere;
+}
+.content-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0;
+  margin: 18px 0 0;
+  list-style: none;
+}
+.content-tags li {
+  background: #e9ebe4;
+  color: #4d6151;
+  font-size: 12px;
+  line-height: 1.6;
+  padding: 4px 10px;
+  border-radius: 4px;
+  overflow-wrap: anywhere;
+  max-width: 100%;
+}
+.project-highlights {
+  list-style: none;
+  display: grid;
+  gap: 12px;
+  padding: 24px 0 0;
+  margin: 24px 0 0;
+  border-top: 1px solid #dddfd5;
+  font-size: 15px;
+  line-height: 1.7;
+}
+.project-highlights li {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  overflow-wrap: anywhere;
+}
+.project-highlights svg {
+  flex: none;
+  align-self: start;
+  margin-top: 4px;
+  color: var(--color-accent);
+}
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 28px;
+  margin-top: 24px;
+}
+.project-links a,
+.profile-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  font-size: 15px;
+  color: var(--color-accent);
+}
+.project-links a:hover,
+.profile-links a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.project-links a {
+  overflow-wrap: anywhere;
+}
+.project-links svg,
+.profile-links svg {
+  flex: none;
+}
+.about-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 64px;
+  padding-top: 42px;
+  align-items: start;
+}
+.about-layout:not(:has(.profile-card)) {
+  grid-template-columns: minmax(0, 760px);
+}
+.about-story {
+  min-width: 0;
+}
+.about-intro {
+  font-size: 18px;
+  line-height: 2;
+  overflow-wrap: anywhere;
+}
+.about-intro p {
+  margin: 0 0 20px;
+}
+.about-sections {
+  margin-top: 36px;
+}
+.about-sections section {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr);
+  gap: 18px;
+  margin-top: 28px;
+}
+.about-sections section > span {
+  color: #71816d;
+  font-size: 12px;
+  padding-top: 7px;
+}
+.about-sections h2 {
+  font-size: 20px;
+  font-weight: 550;
+  margin: 0 0 8px;
+}
+.about-sections p {
+  font-size: 15px;
+  color: var(--color-muted);
+  line-height: 1.95;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.about-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 32px;
+  margin-top: 32px;
+}
+.about-actions .text-link {
+  font-size: 16px;
+}
+.profile-card {
+  border: 1px solid #d8dfd0;
+  background: #e9ede3;
+  border-radius: 14px;
+  padding: 28px;
+  min-width: 0;
+}
+.profile-card .content-kicker {
+  font-size: 11px;
+  margin-bottom: 16px;
+}
+.profile-card h2 {
+  font-size: 25px;
+  line-height: 1.5;
+  font-weight: 550;
+  margin: 0 0 16px;
+  overflow-wrap: anywhere;
+}
+.profile-bio {
+  color: #596452;
+  font-size: 16px;
+  line-height: 1.9;
+  margin: 0 0 12px;
+  overflow-wrap: anywhere;
+}
+.profile-links {
+  border-top: 1px solid #cdd6c6;
+  margin-top: 24px;
+  padding-top: 16px;
+  display: flex;
+  flex-direction: column;
+}
+.profile-links a {
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+.profile-links a span {
+  min-width: 0;
+}
+@media (max-width: 1000px) {
+  .about-layout {
+    grid-template-columns: minmax(0, 1fr) 290px;
+    gap: 36px;
+  }
+  .profile-card {
+    padding: 24px;
+  }
+}
+@media (max-width: 760px) {
+  .project-card {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+    padding-block: 28px;
+  }
+  .project-index {
+    padding: 0;
+    font-size: 12px;
+  }
+  .project-card-heading h2 {
+    font-size: 25px;
+  }
+  .project-description {
+    font-size: 16px;
+  }
+  .about-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+    padding-top: 28px;
+  }
+  .about-intro {
+    font-size: 17px;
+  }
+  .profile-card {
+    grid-row: 1;
+  }
+}
