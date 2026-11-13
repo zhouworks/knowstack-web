@@ -68,13 +68,20 @@ main:focus {
   gap: 28px;
 }
 .wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
   font-size: 32px;
   font-weight: 650;
   letter-spacing: -1px;
   white-space: nowrap;
 }
-.wordmark span {
+.wordmark [lang='en'] {
   letter-spacing: -0.8px;
+}
+.brand-mark {
+  display: block;
+  flex: none;
 }
 .site-nav {
   display: flex;
@@ -210,6 +217,9 @@ main {
   font-size: 17px;
 }
 .footer-wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   font-weight: 650;
   white-space: nowrap;
 }
@@ -355,6 +365,11 @@ main {
   }
   .wordmark {
     font-size: 22px;
+    gap: 9px;
+  }
+  .wordmark .brand-mark {
+    width: 30px;
+    height: 30px;
   }
   .site-nav {
     gap: 20px;

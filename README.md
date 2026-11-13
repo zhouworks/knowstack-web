@@ -52,6 +52,7 @@ npm run preview
 
 ## 设计与资产
 
+- 本站 Logo：`public/brand/knowstack-mark.svg`；设计、导出方式和验收见 `docs/design/brand.md`。导航、页脚与浏览器图标使用已确认的无外框书页标志，SVG/PNG 背景透明，已替换模板 favicon。
 - 设计说明：`docs/design/home-design.md`；参考图：`docs/design/home-reference.png`。
 - 首页：`src/views/HomeView.vue`；公共布局：`src/App.vue`；样式：`src/styles.css`。
 - 书页图：`src/assets/book-sculpture.webp` 和窄屏版本 `book-sculpture-small.webp`，使用内置 Image Gen 从选定稿生成，再转换 WebP。

@@ -27,7 +27,11 @@ watch(
   <div class="site-shell">
     <header class="site-header">
       <RouterLink to="/" class="wordmark" :aria-label="`${siteName} 首页`">
-        {{ siteContent.name }} <span lang="en">{{ siteContent.englishName }}</span>
+        <!-- 链接已有完整名称，图形使用空替代文本，避免读屏重复朗读。 -->
+        <img class="brand-mark" src="/brand/knowstack-mark.svg?v=2" width="38" height="38" alt="" />
+        <span
+          >{{ siteContent.name }} <span lang="en">{{ siteContent.englishName }}</span></span
+        >
       </RouterLink>
       <nav class="site-nav" aria-label="主导航">
         <RouterLink
@@ -47,7 +51,10 @@ watch(
     </main>
 
     <footer class="site-footer">
-      <RouterLink to="/" class="footer-wordmark">{{ siteName }}</RouterLink>
+      <RouterLink to="/" class="footer-wordmark">
+        <img class="brand-mark" src="/brand/knowstack-mark.svg?v=2" width="24" height="24" alt="" />
+        {{ siteName }}
+      </RouterLink>
       <p>{{ siteContent.tagline }}</p>
     </footer>
   </div>
